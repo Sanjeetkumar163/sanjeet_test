@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'array_test.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'array_test.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
@@ -75,9 +75,13 @@ WSGI_APPLICATION = 'array_test.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'HOST': "localhost",
+        'PORT': "5432",
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'contify_db',
+        'USER': 'django_app',
+        'PASSWORD': 'django',
+    },
 }
 
 
